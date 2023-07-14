@@ -1,4 +1,3 @@
-$project_folder="bikeshare_model"
 install:
 	pip install --upgrade pip &&\
 	    pip install -r requirements/freeze-requirements.txt
