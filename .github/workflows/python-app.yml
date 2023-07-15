@@ -30,17 +30,27 @@ jobs:
 #     - name: Build package
 #       run: |
 #         python3 -m build
-    - name: Install dependencies
-      run: |
-        make install -f MAKEFILE
     - name: Lint with pylint
       run: |
         # stop the build if there are Python syntax errors or undefined names
         make lint -f MAKEFILE
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
+    - name: Run Train pipeline
+      run: |
+        python3 bikeshare_model/train_pipeline.py
+    - name: Run Predict
+      run: |
+        python3 bikeshare_model/predict.py
+    - name: Install dependencies
+      run: |
+        make install -f MAKEFILE
     - name: Test with pytest
       run: |
         make test -f MAKEFILE
     - name: Format code with black
       run: |
         make format -f MAKEFILE
+    - name: Build
+      run: |
+        # run build
+        python3 -m build
