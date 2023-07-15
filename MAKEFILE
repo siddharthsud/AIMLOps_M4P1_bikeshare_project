@@ -9,6 +9,6 @@ lint:
 	pylint --disable=R,C *.py
 
 test:
-	python3 -m pytest bikeshare_model/tests/test_*.py
+	python3 -m pytest ./bikeshare_model/tests/test_*.py
 
 all: install lint test format
