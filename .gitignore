@@ -1,0 +1,8 @@
+AIMLOPS/
+bikeshare_model.egg-info/
+dist/
+*.pkl
+bikeshare_model/__pycache__/
+bikeshare_model/config/__pycache__/
+bikeshare_model/processing/__pycache__/
+bikeshare_model/tests/__pycache__/
