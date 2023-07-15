@@ -9,6 +9,6 @@ lint:
 	pylint --disable=R,C --errors-only bikeshare_model/*.py
 
 test:
-	python3 -m pytest ./bikeshare_model/tests/test_*.py
+	python3 -m pytest ./bikeshare_model/tests/test_*.py -W ignore::DeprecationWarning
 
 all: install lint test format
