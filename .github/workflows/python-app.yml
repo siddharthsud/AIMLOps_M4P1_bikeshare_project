@@ -32,7 +32,7 @@ jobs:
 #         python3 -m build
     - name: Install dependencies
       run: |
-        make install
+        make install -f MAKEFILE
     - name: Lint with pylint
       run: |
         # stop the build if there are Python syntax errors or undefined names
