@@ -6,7 +6,7 @@ sys.path.append(str(root))
 
 from typing import Union
 import pandas as pd
-import numpy as np
+# import numpy as np
 
 from bikeshare_model import __version__ as _version
 from bikeshare_model.config.core import config
