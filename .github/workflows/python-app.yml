@@ -1,56 +1,56 @@
-# This workflow will install Python dependencies, run tests and lint with a single version of Python
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
+# # This workflow will install Python dependencies, run tests and lint with a single version of Python
+# # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
 
-name: Python package
+# name: Python package
 
-on:
-  push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
+# on:
+#   push:
+#     branches: [ "master" ]
+#   pull_request:
+#     branches: [ "master" ]
 
-permissions:
-  contents: read
+# permissions:
+#   contents: read
 
-jobs:
-  build:
+# jobs:
+#   build:
 
-    runs-on: ubuntu-latest
-    strategy:
-        fail-fast: false
-        matrix: 
-              python-version: ["3.9"]
+#     runs-on: ubuntu-latest
+#     strategy:
+#         fail-fast: false
+#         matrix: 
+#               python-version: ["3.9"]
 
-    steps:
-    - uses: actions/checkout@v3
-    - name: Set up Python ${{ matrix.python-version}}
-      uses: actions/setup-python@v3
-      with:
-        python-version: ${{matrix.python-version}}
-#     - name: Build package
+#     steps:
+#     - uses: actions/checkout@v3
+#     - name: Set up Python ${{ matrix.python-version}}
+#       uses: actions/setup-python@v3
+#       with:
+#         python-version: ${{matrix.python-version}}
+# #     - name: Build package
+# #       run: |
+# #         python3 -m build
+#     - name: Install dependencies
 #       run: |
+#         make install -f MAKEFILE
+#     - name: Lint with pylint
+#       run: |
+#         # stop the build if there are Python syntax errors or undefined names
+#         make lint -f MAKEFILE
+#         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
+#     - name: Run Train pipeline
+#       run: |
+#         python3 bikeshare_model/train_pipeline.py
+#     - name: Run Predict
+#       run: |
+#         python3 bikeshare_model/predict.py
+#     - name: Test with pytest
+#       run: |
+#         make test -f MAKEFILE
+#     - name: Format code with black
+#       run: |
+#         make format -f MAKEFILE
+#     - name: Build
+#       run: |
+#         # run build
 #         python3 -m build
-    - name: Install dependencies
-      run: |
-        make install -f MAKEFILE
-    - name: Lint with pylint
-      run: |
-        # stop the build if there are Python syntax errors or undefined names
-        make lint -f MAKEFILE
-        # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
-    - name: Run Train pipeline
-      run: |
-        python3 bikeshare_model/train_pipeline.py
-    - name: Run Predict
-      run: |
-        python3 bikeshare_model/predict.py
-    - name: Test with pytest
-      run: |
-        make test -f MAKEFILE
-    - name: Format code with black
-      run: |
-        make format -f MAKEFILE
-    - name: Build
-      run: |
-        # run build
-        python3 -m build
